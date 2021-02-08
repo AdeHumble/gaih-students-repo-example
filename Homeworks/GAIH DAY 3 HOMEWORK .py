@@ -9,6 +9,7 @@ ORGANISATION: GLOBAL AI PYTHON HUB
 #Homework 3a: A program to verify a user login information
 #If there is anything i must add, this program is very dynamic
 
+#The username and password are purposely designed to be case-insensitive. Not for any special reasons though
 user_name='adeyanju'
 pass_word='blessing'
 count=0
@@ -33,7 +34,8 @@ while username==user_name:
             print('\nYou have exceeded your trial limits\nThis software is shutting down now....!')
             break
 
-while username!=user_name:   
+while username!=user_name:  
+    count+=1
     if count<=2:
         username=input('That was a wrong username. Please try again: ').strip().lower()
         
@@ -45,6 +47,10 @@ while username!=user_name:
             
             while pass_word!=password:
                 password=input('Enter your password: ').lower().strip()
+                if password==pass_word:
+                    print('\nYou have succesfully logged in into your account')
+                    break
+                
                 count1+=1
                 if count1<=2:
                     continue
@@ -61,14 +67,9 @@ while username!=user_name:
 
 
 
-
-
-
-
-#HOMEWORK 3b (EXTRA): This is purposely commented. it can be uncommented when its time to test it
-
-# profile={user_name: 'adeyanju', pass_word: 'blessing'}
-
+# HOMEWORK 3b (EXTRA): This is purposely commented. it can be uncommented when its time to test it
+# user_name,pass_word='adeyanju', 'blessing'
+# profile={user_name:'adeyanju', pass_word:'blessing'}
 # count=0
 # count1=0
 
@@ -92,17 +93,20 @@ while username!=user_name:
 #             break
 
 # while username!=profile[user_name]:
-    
+#     count+=1    
 #     if count<=2:
 #         username=input('That was a wrong username. Please try again: ').strip().lower()
 #         if username==profile[user_name]:
 #             print('\nWelcome', username, "\nPLease enter your pasword to further verify your identity")
 #             count1=0
-#             profile[pass_word]=='blessing'
 #             password=input('Enter your password: ').lower().strip()
 #             while password!=profile[pass_word]:
 #                 password=input('Enter your password: ').lower().strip()
+#                 if profile[pass_word]==password:
+#                     print('\nYou have succesfully logged in into your account')
+#                     break
 #                 count1+=1
+
 #                 if count1<=2:
 #                     continue
 #                 else:
